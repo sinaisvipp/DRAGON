@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>[RABBIT] – APP dos Artistas</title>
+    <meta name='robots' content='noindex, nofollow' />
+    <link rel='dns-prefetch' href='https://www.googletagmanager.com/' />
+    <script defer
+        src="data:text/javascript;base64,CndpbmRvdy5fd3BlbW9qaVNldHRpbmdzID0geyJiYXNlVXJsIjoiaHR0cHM6XC9cL3Mudy5vcmdcL2ltYWdlc1wvY29yZVwvZW1vamlcLzE1LjAuM1wvNzJ4NzJcLyIsImV4dCI6Ii5wbmciLCJzdmdVcmwiOiJodHRwczpcL1wvcy53Lm9yZ1wvaW1hZ2VzXC9jb3JlXC9lbW9qaVwvMTUuMC4zXC9zdmdcLyIsInN2Z0V4dCI6Ii5zdmciLCJzb3VyY2UiOnsiY29uY2F0ZW1vamkiOiJodHRwczpcL1wvbm92YW50YS5hcHBcL3dwLWluY2x1ZGVzXC9qc1wvd3AtZW1vamktcmVsZWFzZS5taW4uanM/dmVyPWJmYTkzZjk4N2E0NTM5NTdiNjM1MDhiM2YzOWMzOGIxIn19OwovKiEgVGhpcyBmaWxlIGlzIGF1dG8tZ2VuZXJhdGVkICovCiFmdW5jdGlvbihpLG4pe3ZhciBvLHMsZTtmdW5jdGlvbiBjKGUpe3RyeXt2YXIgdD17c3VwcG9ydFRlc3RzOmUsdGltZXN0YW1wOihuZXcgRGF0ZSkudmFsdWVPZigpfTtzZXNzaW9uU3RvcmFnZS5zZXRJdGVtKG8sSlNPTi5zdHJpbmdpZnkodCkpfWNhdGNoKGUpe319ZnVuY3Rpb24gcChlLHQsbil7ZS5jbGVhclJlY3QoMCwwLGUuY2FudmFzLndpZHRoLGUuY2FudmFzLmhlaWdodCksZS5maWxsVGV4dCh0LDAsMCk7dmFyIHQ9bmV3IFVpbnQzMkFycmF5KGUuZ2V0SW1hZ2VEYXRhKDAsMCxlLmNhbnZhcy53aWR0aCxlLmNhbnZhcy5oZWlnaHQpLmRhdGEpLHI9KGUuY2xlYXJSZWN0KDAsMCxlLmNhbnZhcy53aWR0aCxlLmNhbnZhcy5oZWlnaHQpLGUuZmlsbFRleHQobiwwLDApLG5ldyBVaW50MzJBcnJheShlLmdldEltYWdlRGF0YSgwLDAsZS5jYW52YXMud2lkdGgsZS5jYW52YXMuaGVpZ2h0KS5kYXRhKSk7cmV0dXJuIHQuZXZlcnkoZnVuY3Rpb24oZSx0KXtyZXR1cm4gZT09PXJbdF19KX1mdW5jdGlvbiB1KGUsdCxuKXtzd2l0Y2godCl7Y2FzZSJmbGFnIjpyZXR1cm4gbihlLCJcdWQ4M2NcdWRmZjNcdWZlMGZcdTIwMGRcdTI2YTdcdWZlMGYiLCJcdWQ4M2NcdWRmZjNcdWZlMGZcdTIwMGJcdTI2YTdcdWZlMGYiKT8hMTohbihlLCJcdWQ4M2NcdWRkZmFcdWQ4M2NcdWRkZjMiLCJcdWQ4M2NcdWRkZmFcdTIwMGJcdWQ4M2NcdWRkZjMiKSYmIW4oZSwiXHVkODNjXHVkZmY0XHVkYjQwXHVkYzY3XHVkYjQwXHVkYzYyXHVkYjQwXHVkYzY1XHVkYjQwXHVkYzZlXHVkYjQwXHVkYzY3XHVkYjQwXHVkYzdmIiwiXHVkODNjXHVkZmY0XHUyMDBiXHVkYjQwXHVkYzY3XHUyMDBiXHVkYjQwXHVkYzYyXHUyMDBiXHVkYjQwXHVkYzY1XHUyMDBiXHVkYjQwXHVkYzZlXHUyMDBiXHVkYjQwXHVkYzY3XHUyMDBiXHVkYjQwXHVkYzdmIik7Y2FzZSJlbW9qaSI6cmV0dXJuIW4oZSwiXHVkODNkXHVkYzI2XHUyMDBkXHUyYjFiIiwiXHVkODNkXHVkYzI2XHUyMDBiXHUyYjFiIil9cmV0dXJuITF9ZnVuY3Rpb24gZihlLHQsbil7dmFyIHI9InVuZGVmaW5lZCIhPXR5cGVvZiBXb3JrZXJHbG9iYWxTY29wZSYmc2VsZiBpbnN0YW5jZW9mIFdvcmtlckdsb2JhbFNjb3BlP25ldyBPZmZzY3JlZW5DYW52YXMoMzAwLDE1MCk6aS5jcmVhdGVFbGVtZW50KCJjYW52YXMiKSxhPXIuZ2V0Q29udGV4dCgiMmQiLHt3aWxsUmVhZEZyZXF1ZW50bHk6ITB9KSxvPShhLnRleHRCYXNlbGluZT0idG9wIixhLmZvbnQ9IjYwMCAzMnB4IEFyaWFsIix7fSk7cmV0dXJuIGUuZm9yRWFjaChmdW5jdGlvbihlKXtvW2VdPXQoYSxlLG4pfSksb31mdW5jdGlvbiB0KGUpe3ZhciB0PWkuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7dC5zcmM9ZSx0LmRlZmVyPSEwLGkuaGVhZC5hcHBlbmRDaGlsZCh0KX0idW5kZWZpbmVkIiE9dHlwZW9mIFByb21pc2UmJihvPSJ3cEVtb2ppU2V0dGluZ3NTdXBwb3J0cyIscz1bImZsYWciLCJlbW9qaSJdLG4uc3VwcG9ydHM9e2V2ZXJ5dGhpbmc6ITAsZXZlcnl0aGluZ0V4Y2VwdEZsYWc6ITB9LGU9bmV3IFByb21pc2UoZnVuY3Rpb24oZSl7aS5hZGRFdmVudExpc3RlbmVyKCJET01Db250ZW50TG9hZGVkIixlLHtvbmNlOiEwfSl9KSxuZXcgUHJvbWlzZShmdW5jdGlvbih0KXt2YXIgbj1mdW5jdGlvbigpe3RyeXt2YXIgZT1KU09OLnBhcnNlKHNlc3Npb25TdG9yYWdlLmdldEl0ZW0obykpO2lmKCJvYmplY3QiPT10eXBlb2YgZSYmIm51bWJlciI9PXR5cGVvZiBlLnRpbWVzdGFtcCYmKG5ldyBEYXRlKS52YWx1ZU9mKCk8ZS50aW1lc3RhbXArNjA0ODAwJiYib2JqZWN0Ij09dHlwZW9mIGUuc3VwcG9ydFRlc3RzKXJldHVybiBlLnN1cHBvcnRUZXN0c31jYXRjaChlKXt9cmV0dXJuIG51bGx9KCk7aWYoIW4pe2lmKCJ1bmRlZmluZWQiIT10eXBlb2YgV29ya2VyJiYidW5kZWZpbmVkIiE9dHlwZW9mIE9mZnNjcmVlbkNhbnZhcyYmInVuZGVmaW5lZCIhPXR5cGVvZiBVUkwmJlVSTC5jcmVhdGVPYmplY3RVUkwmJiJ1bmRlZmluZWQiIT10eXBlb2YgQmxvYil0cnl7dmFyIGU9InBvc3RNZXNzYWdlKCIrZi50b1N0cmluZygpKyIoIitbSlNPTi5zdHJpbmdpZnkocyksdS50b1N0cmluZygpLHAudG9TdHJpbmcoKV0uam9pbigiLCIpKyIpKTsiLHI9bmV3IEJsb2IoW2VdLHt0eXBlOiJ0ZXh0L2phdmFzY3JpcHQifSksYT1uZXcgV29ya2VyKFVSTC5jcmVhdGVPYmplY3RVUkwocikse25hbWU6IndwVGVzdEVtb2ppU3VwcG9ydHMifSk7cmV0dXJuIHZvaWQoYS5vbm1lc3NhZ2U9ZnVuY3Rpb24oZSl7YyhuPWUuZGF0YSksYS50ZXJtaW5hdGUoKSx0KG4pfSl9Y2F0Y2goZSl7fWMobj1mKHMsdSxwKSl9dChuKX0pLnRoZW4oZnVuY3Rpb24oZSl7Zm9yKHZhciB0IGluIGUpbi5zdXBwb3J0c1t0XT1lW3RdLG4uc3VwcG9ydHMuZXZlcnl0aGluZz1uLnN1cHBvcnRzLmV2ZXJ5dGhpbmcmJm4uc3VwcG9ydHNbdF0sImZsYWciIT09dCYmKG4uc3VwcG9ydHMuZXZlcnl0aGluZ0V4Y2VwdEZsYWc9bi5zdXBwb3J0cy5ldmVyeXRoaW5nRXhjZXB0RmxhZyYmbi5zdXBwb3J0c1t0XSk7bi5zdXBwb3J0cy5ldmVyeXRoaW5nRXhjZXB0RmxhZz1uLnN1cHBvcnRzLmV2ZXJ5dGhpbmdFeGNlcHRGbGFnJiYhbi5zdXBwb3J0cy5mbGFnLG4uRE9NUmVhZHk9ITEsbi5yZWFkeUNhbGxiYWNrPWZ1bmN0aW9uKCl7bi5ET01SZWFkeT0hMH19KS50aGVuKGZ1bmN0aW9uKCl7cmV0dXJuIGV9KS50aGVuKGZ1bmN0aW9uKCl7dmFyIGU7bi5zdXBwb3J0cy5ldmVyeXRoaW5nfHwobi5yZWFkeUNhbGxiYWNrKCksKGU9bi5zb3VyY2V8fHt9KS5jb25jYXRlbW9qaT90KGUuY29uY2F0ZW1vamkpOmUud3BlbW9qaSYmZS50d2Vtb2ppJiYodChlLnR3ZW1vamkpLHQoZS53cGVtb2ppKSkpfSkpfSgod2luZG93LGRvY3VtZW50KSx3aW5kb3cuX3dwZW1vamlTZXR0aW5ncyk7Cg=="></script>
+    <link rel='stylesheet' id='bdt-uikit-css'
+        href='https://novanta.app/wp-content/cache/autoptimize/autoptimize_single_d982b379b64c33cc5d046ceb060ff058.php?ver=3.17.11'
+        media='all' />
+    <link rel='stylesheet' id='ep-helper-css'
+        href='https://novanta.app/wp-content/cache/autoptimize/autoptimize_single_4351d12276b131ab0512759b068e85e3.php?ver=7.12.2'
+        media='all' />
+    <style id='wp-emoji-styles-inline-css'>
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 0.07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <style id='classic-theme-styles-inline-css'>
+        /*! This file is auto-generated */
+        .wp-block-button__link {
+            color: #fff;
+            background-color: #32373c;
+            border-radius: 9999px;
+            box-shadow: none;
+            text-decoration: none;
+            padding: calc(.667em + 2px) calc(1.333em + 2px);
+            font-size: 1.125em
+        }
+
+        .wp-block-file__button {
+            background: #32373c;
+            color: #fff;
+            text-decoration: none
+        }
+    </style>
+    <style id='global-styles-inline-css'>
+        body {
+            --wp--preset--color--black: #000000;
+            --wp--preset--color--cyan-bluish-gray: #abb8c3;
+            --wp--preset--color--white: #ffffff;
+            --wp--preset--color--pale-pink: #f78da7;
+            --wp--preset--color--vivid-red: #cf2e2e;
+            --wp--preset--color--luminous-vivid-orange: #ff6900;
+            --wp--preset--color--luminous-vivid-amber: #fcb900;
+            --wp--preset--color--light-green-cyan: #7bdcb5;
+            --wp--preset--color--vivid-green-cyan: #00d084;
+            --wp--preset--color--pale-cyan-blue: #8ed1fc;
+            --wp--preset--color--vivid-cyan-blue: #0693e3;
+            --wp--preset--color--vivid-purple: #9b51e0;
+            --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+            --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+            --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+            --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+            --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+            --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+            --wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+            --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+            --wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+            --wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+            --wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+            --wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+            --wp--preset--font-size--small: 13px;
+            --wp--preset--font-size--medium: 20px;
+            --wp--preset--font-size--large: 36px;
+            --wp--preset--font-size--x-large: 42px;
+            --wp--preset--spacing--20: 0.44rem;
+            --wp--preset--spacing--30: 0.67rem;
+            --wp--preset--spacing--40: 1rem;
+            --wp--preset--spacing--50: 1.5rem;
+            --wp--preset--spacing--60: 2.25rem;
+            --wp--preset--spacing--70: 3.38rem;
+            --wp--preset--spacing--80: 5.06rem;
+            --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+            --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+            --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+            --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+            --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+        }
+
+        :where(.is-layout-flex) {
+            gap: 0.5em;
+        }
+
+        :where(.is-layout-grid) {
+            gap: 0.5em;
+        }
+
+        body .is-layout-flex {
+            display: flex;
+        }
+
+        body .is-layout-flex {
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        body .is-layout-flex>* {
+            margin: 0;
+        }
+
+        body .is-layout-grid {
+            display: grid;
+        }
+
+        body .is-layout-grid>* {
+            margin: 0;
+        }
+
+        :where(.wp-block-columns.is-layout-flex) {
+            gap: 2em;
+        }
+
+        :where(.wp-block-columns.is-layout-grid) {
+            gap: 2em;
+        }
+
+        :where(.wp-block-post-template.is-layout-flex) {
+            gap: 1.25em;
+        }
+
+        :where(.wp-block-post-template.is-layout-grid) {
+            gap: 1.25em;
+        }
+
+        .has-black-color {
+            color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-color {
+            color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-color {
+            color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-color {
+            color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-color {
+            color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-color {
+            color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-color {
+            color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-color {
+            color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-color {
+            color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-color {
+            color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-color {
+            color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-color {
+            color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-background-color {
+            background-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-background-color {
+            background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-background-color {
+            background-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-background-color {
+            background-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-background-color {
+            background-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-background-color {
+            background-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-background-color {
+            background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-background-color {
+            background-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-border-color {
+            border-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-border-color {
+            border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-border-color {
+            border-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-border-color {
+            border-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-border-color {
+            border-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-border-color {
+            border-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-border-color {
+            border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-border-color {
+            border-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+            background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+        }
+
+        .has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+            background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+        }
+
+        .has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-orange-to-vivid-red-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+        }
+
+        .has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+            background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+        }
+
+        .has-cool-to-warm-spectrum-gradient-background {
+            background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+        }
+
+        .has-blush-light-purple-gradient-background {
+            background: var(--wp--preset--gradient--blush-light-purple) !important;
+        }
+
+        .has-blush-bordeaux-gradient-background {
+            background: var(--wp--preset--gradient--blush-bordeaux) !important;
+        }
+
+        .has-luminous-dusk-gradient-background {
+            background: var(--wp--preset--gradient--luminous-dusk) !important;
+        }
+
+        .has-pale-ocean-gradient-background {
+            background: var(--wp--preset--gradient--pale-ocean) !important;
+        }
+
+        .has-electric-grass-gradient-background {
+            background: var(--wp--preset--gradient--electric-grass) !important;
+        }
+
+        .has-midnight-gradient-background {
+            background: var(--wp--preset--gradient--midnight) !important;
+        }
+
+        .has-small-font-size {
+            font-size: var(--wp--preset--font-size--small) !important;
+        }
+
+        .has-medium-font-size {
+            font-size: var(--wp--preset--font-size--medium) !important;
+        }
+
+        .has-large-font-size {
+            font-size: var(--wp--preset--font-size--large) !important;
+        }
+
+        .has-x-large-font-size {
+            font-size: var(--wp--preset--font-size--x-large) !important;
+        }
+
+        .wp-block-navigation a:where(:not(.wp-element-button)) {
+            color: inherit;
+        }
+
+        :where(.wp-block-post-template.is-layout-flex) {
+            gap: 1.25em;
+        }
+
+        :where(.wp-block-post-template.is-layout-grid) {
+            gap: 1.25em;
+        }
+
+        :where(.wp-block-columns.is-layout-flex) {
+            gap: 2em;
+        }
+
+        :where(.wp-block-columns.is-layout-grid) {
+            gap: 2em;
+        }
+
+        .wp-block-pullquote {
+            font-size: 1.5em;
+            line-height: 1.6;
+        }
+    </style>
+    <link rel='stylesheet' id='hello-elementor-css'
+        href='https://novanta.app/wp-content/themes/hello-elementor/style.min.css?ver=3.0.1' media='all' />
+    <link rel='stylesheet' id='hello-elementor-theme-style-css'
+        href='https://novanta.app/wp-content/themes/hello-elementor/theme.min.css?ver=3.0.1' media='all' />
+    <link rel='stylesheet' id='hello-elementor-header-footer-css'
+        href='https://novanta.app/wp-content/themes/hello-elementor/header-footer.min.css?ver=3.0.1' media='all' />
+    <link rel='stylesheet' id='elementor-frontend-css'
+        href='https://novanta.app/wp-content/plugins/elementor/assets/css/frontend-lite.min.css?ver=3.21.5'
+        media='all' />
+    <link rel='stylesheet' id='elementor-post-9-css'
+        href='https://novanta.app/wp-content/cache/autoptimize/autoptimize_single_4b3dc6f4bb6b5ddc83b4c48189ebd749.php?ver=1715703096'
+        media='all' />
+    <link rel='stylesheet' id='swiper-css'
+        href='https://novanta.app/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css?ver=8.4.5'
+        media='all' />
+    <link rel='stylesheet' id='elementor-pro-css'
+        href='https://novanta.app/wp-content/plugins/elementor-pro/assets/css/frontend-lite.min.css?ver=3.21.2'
+        media='all' />
+    <link rel='stylesheet' id='elementor-global-css'
+        href='https://novanta.app/wp-content/cache/autoptimize/autoptimize_single_c448c7de39163261edcc869a7fedade2.php?ver=1715703096'
+        media='all' />
+    <link rel='stylesheet' id='elementor-post-275-css'
+        href='https://novanta.app/wp-content/cache/autoptimize/autoptimize_single_83d9aa12dfe2e48e8c2cdab42adfa283.php?ver=1715703097'
+        media='all' />
+    <link rel='stylesheet' id='google-fonts-1-css'
+        href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap&#038;ver=bfa93f987a453957b63508b3f39c38b1'
+        media='all' />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="https://api.w.org/" href="https://novanta.app/wp-json/" />
+    <link rel="alternate" type="application/json" href="https://novanta.app/wp-json/wp/v2/pages/275" />
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://novanta.app/xmlrpc.php?rsd" />
+    <link rel="canonical" href="https://novanta.app/rabbit-fernanda-novanta-gm/" />
+    <link rel='shortlink' href='https://novanta.app/?p=275' />
+    <link rel="alternate" type="application/json+oembed"
+        href="https://novanta.app/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnovanta.app%2Frabbit-fernanda-novanta-gm%2F" />
+    <link rel="alternate" type="text/xml+oembed"
+        href="https://novanta.app/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnovanta.app%2Frabbit-fernanda-novanta-gm%2F&#038;format=xml" />
+    <meta name="generator" content="Site Kit by Google 1.126.0" />
+    <meta name="generator"
+        content="Elementor 3.21.5; features: e_optimized_assets_loading, e_optimized_css_loading, e_font_icon_svg, additional_custom_breakpoints, e_lazyload; settings: css_print_method-external, google_font-enabled, font_display-swap">
+   
+    <script defer
+        src="data:text/javascript;base64,DQogICAgRGlzYWJsZURldnRvb2woew0KICAgICAgICAvLyBUaGUgcGFyYW1ldGVycyBhcmUgdGhlIHNhbWUgYXMgaW4gMy4xDQogICAgfSkNCg=="></script>
+    <style>
+        .e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+        .e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+            background-image: none !important;
+        }
+
+        @media screen and (max-height: 1024px) {
+
+            .e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+            .e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+                background-image: none !important;
+            }
+        }
+
+        @media screen and (max-height: 640px) {
+
+            .e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+            .e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+                background-image: none !important;
+            }
+        }
+    </style>
+    <link rel="icon" href="https://novanta.app/wp-content/uploads/2024/05/cropped-Favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://novanta.app/wp-content/uploads/2024/05/cropped-Favicon-192x192.png"
+        sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://novanta.app/wp-content/uploads/2024/05/cropped-Favicon-180x180.png" />
+    <meta name="msapplication-TileImage"
+        content="https://novanta.app/wp-content/uploads/2024/05/cropped-Favicon-270x270.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+</head>
+
+<body
+    class="page-template page-template-elementor_canvas page page-id-275 elementor-default elementor-template-canvas elementor-kit-9 elementor-page elementor-page-275">
+    <div data-elementor-type="wp-page" data-elementor-id="275" class="elementor elementor-275"
+        data-elementor-post-type="page">
+        <div class="elementor-element elementor-element-9ab6cec e-flex e-con-boxed e-con e-parent" data-id="9ab6cec"
+            data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+            <div class="e-con-inner">
+                <div class="elementor-element elementor-element-a7f33d1 e-flex e-con-boxed e-con e-child"
+                    data-id="a7f33d1" data-element_type="container">
+                    <div class="e-con-inner">
+                        <div class="elementor-element elementor-element-6da7eaa e-flex e-con-boxed e-con e-child"
+                            data-id="6da7eaa" data-element_type="container">
+                            <div class="e-con-inner">
+                                <div class="elementor-element elementor-element-1b8c29a elementor-widget elementor-widget-html"
+                                    data-id="1b8c29a" data-element_type="widget" data-widget_type="html.default">
+                                    <div class="elementor-widget-container">
+                                        <script defer
+                                            src="data:text/javascript;base64,DQpkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKCdET01Db250ZW50TG9hZGVkJywgZnVuY3Rpb24oKSB7DQogICAgdmFyIGJ1dHRvbiA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdib3Rhby1nZXJhZG9yJyk7DQogICAgdmFyIHdpZGdldDEgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnbm9ybWFsJyk7DQogICAgdmFyIHdpZGdldDIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndHVyYm8nKTsNCiAgICB2YXIgd2lkZ2V0MyA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd2YWxpZGFkZScpOw0KICAgICAgICAgdmFyIHdpZGdldDQgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncG9yY2VudGFnZW0nKTsNCg0KICAgIHZhciBjb29sZG93biA9IDMwOyAvLyBUZW1wbyBkZSBlc3BlcmEgZW0gc2VndW5kb3MNCiAgICB2YXIgY291bnRpbmdEb3duID0gZmFsc2U7DQogICAgdmFyIGxhc3ROdW1iZXJzID0gW107IC8vIEFybWF6ZW5hIG9zIMO6bHRpbW9zIG7Dum1lcm9zIGdlcmFkb3MNCg0KICAgIC8vIEFkaWNpb25hIG8gZWxlbWVudG8gZGUgw6F1ZGlvIGFvIERPTQ0KICAgIHZhciBhdWRpb0VsZW1lbnQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdhdWRpbycpOw0KICAgIGF1ZGlvRWxlbWVudC5zcmMgPSAnaHR0cHM6Ly9hcHBnZWJlLmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAyNC8wMy9Tb20tRm9ydHVuZS1UaWdlci5tcDMnOw0KICAgIGF1ZGlvRWxlbWVudC5zZXRBdHRyaWJ1dGUoJ2lkJywgJ3NvdW5kJyk7DQogICAgZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChhdWRpb0VsZW1lbnQpOw0KDQogICAgLy8gRnVuw6fDo28gcGFyYSBnZXJhciB1bSBuw7ptZXJvIGFsZWF0w7NyaW8gw7puaWNvIGRlbnRybyBkZSB1bSBsaW1pdGUNCiAgICBmdW5jdGlvbiBnZW5lcmF0ZVVuaXF1ZVJhbmRvbU51bWJlcigpIHsNCiAgICAgICAgdmFyIHJhbmRvbU51bWJlcjsNCiAgICAgICAgLy8gR2VyYSB1bSBuw7ptZXJvIGFsZWF0w7NyaW8gYXTDqSBxdWUgc2VqYSDDum5pY28NCiAgICAgICAgZG8gew0KICAgICAgICAgICAgcmFuZG9tTnVtYmVyID0gTWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpICogMTEpICsgNTsgLy8gR2VyYSBuw7ptZXJvcyBkZSAxIGEgMTANCiAgICAgICAgfSB3aGlsZSAobGFzdE51bWJlcnMuaW5jbHVkZXMocmFuZG9tTnVtYmVyKSk7DQogICAgICAgIGxhc3ROdW1iZXJzLnB1c2gocmFuZG9tTnVtYmVyKTsNCiAgICAgICAgcmV0dXJuIHJhbmRvbU51bWJlcjsNCiAgICB9DQoNCiAgICAvLyBGdW7Dp8OjbyBwYXJhIGluaWNpYXIgbyBjb29sZG93biBhcMOzcyBvIGNsaXF1ZSBubyBib3TDo28NCiAgICBmdW5jdGlvbiBzdGFydENvb2xkb3duKCkgew0KICAgICAgICBjb3VudGluZ0Rvd24gPSB0cnVlOw0KICAgICAgICBidXR0b24uY2xhc3NMaXN0LmFkZCgnZGlzYWJsZWQtYnV0dG9uJyk7IC8vIEFkaWNpb25hIGEgY2xhc3NlIENTUyBhbyBib3TDo28NCiAgICAgICAgYnV0dG9uLmRpc2FibGVkID0gdHJ1ZTsNCiAgICAgICAgdmFyIGludGVydmFsID0gc2V0SW50ZXJ2YWwoZnVuY3Rpb24oKSB7DQogICAgICAgICAgICBjb29sZG93bi0tOw0KICAgICAgICAgICAgYnV0dG9uLmlubmVySFRNTCA9ICJBZ3VhcmRlOiAiICsgY29vbGRvd24gKyAicyI7DQogICAgICAgICAgICBpZiAoY29vbGRvd24gPD0gMCkgew0KICAgICAgICAgICAgICAgIGNsZWFySW50ZXJ2YWwoaW50ZXJ2YWwpOw0KICAgICAgICAgICAgICAgIGNvdW50aW5nRG93biA9IGZhbHNlOw0KICAgICAgICAgICAgICAgIGJ1dHRvbi5pbm5lckhUTUwgPSAiR2VyYXIgbm92byBzaW5hbCI7DQogICAgICAgICAgICAgICAgYnV0dG9uLmRpc2FibGVkID0gZmFsc2U7DQogICAgICAgICAgICAgICAgYnV0dG9uLmNsYXNzTGlzdC5yZW1vdmUoJ2Rpc2FibGVkLWJ1dHRvbicpOyAvLyBSZW1vdmUgYSBjbGFzc2UgQ1NTIGRvIGJvdMOjbw0KICAgICAgICAgICAgICAgIGNvb2xkb3duID0gMzA7DQogICAgICAgICAgICB9DQogICAgICAgIH0sIDEwMDApOw0KICAgIH0NCg0KICAgIC8vIEZ1bsOnw6NvIHBhcmEgYXBsaWNhciBhIGFuaW1hw6fDo28gZGUgInBpc2NhciIgYW8gZWxlbWVudG8NCiAgICBmdW5jdGlvbiBhcHBseUJsaW5rQW5pbWF0aW9uKGVsZW1lbnQpIHsNCiAgICAgICAgdmFyIGJsaW5rQ291bnQgPSAwOw0KICAgICAgICB2YXIgaW50ZXJ2YWwgPSBzZXRJbnRlcnZhbChmdW5jdGlvbigpIHsNCiAgICAgICAgICAgIGlmIChibGlua0NvdW50ID49IDUpIHsNCiAgICAgICAgICAgICAgICBjbGVhckludGVydmFsKGludGVydmFsKTsNCiAgICAgICAgICAgICAgICBlbGVtZW50LnN0eWxlLnZpc2liaWxpdHkgPSAndmlzaWJsZSc7IC8vIEdhcmFudGUgcXVlIG8gZWxlbWVudG8gZXN0ZWphIHZpc8OtdmVsIGFvIGZpbmFsIGRhIGFuaW1hw6fDo28NCiAgICAgICAgICAgIH0gZWxzZSB7DQogICAgICAgICAgICAgICAgaWYgKGVsZW1lbnQuc3R5bGUudmlzaWJpbGl0eSA9PT0gJ3Zpc2libGUnKSB7DQogICAgICAgICAgICAgICAgICAgIGVsZW1lbnQuc3R5bGUudmlzaWJpbGl0eSA9ICdoaWRkZW4nOw0KICAgICAgICAgICAgICAgIH0gZWxzZSB7DQogICAgICAgICAgICAgICAgICAgIGVsZW1lbnQuc3R5bGUudmlzaWJpbGl0eSA9ICd2aXNpYmxlJzsNCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgYmxpbmtDb3VudCsrOw0KICAgICAgICAgICAgfQ0KICAgICAgICB9LCAyMDApOyAvLyBJbnRlcnZhbG8gZGUgMjAwIG1pbGlzc2VndW5kb3MgZW50cmUgY2FkYSBwaXNjYWRhDQogICAgfQ0KDQogICAgLy8gRXZlbnRvIGRlIGNsaXF1ZSBubyBib3TDo28NCiAgICBidXR0b24uYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCBmdW5jdGlvbigpIHsNCiAgICAgICAgLy8gVmVyaWZpY2Egc2UgbsOjbyBlc3TDoSBlbSBjb29sZG93bg0KICAgICAgICBpZiAoIWNvdW50aW5nRG93bikgew0KICAgICAgICAgICAgLy8gUmVwcm9kdXogbyBlZmVpdG8gc29ub3JvDQogICAgICAgICAgICB2YXIgc291bmQgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnc291bmQnKTsNCiAgICAgICAgICAgIHNvdW5kLnBsYXkoKTsNCg0KICAgICAgICAgICAgLy8gSW5pY2lhIG8gY29vbGRvd24NCiAgICAgICAgICAgIHN0YXJ0Q29vbGRvd24oKTsNCiAgICAgICAgICAgIC8vIEdlcmEgbsO6bWVyb3Mgw7puaWNvcyBlIG9zIGF0cmlidWkgYW9zIHdpZGdldHMgZGUgdGV4dG8NCiAgICAgICAgICAgIHZhciBudW1lcm8xID0gZ2VuZXJhdGVVbmlxdWVSYW5kb21OdW1iZXIoKSArICJYIjsNCiAgICAgICAgICAgIHZhciBudW1lcm8yID0gZ2VuZXJhdGVVbmlxdWVSYW5kb21OdW1iZXIoKSArICJYIjsNCiAgICAgICAgICAgIHZhciBudW1lcm8zID0gZ2VuZXJhdGVVbmlxdWVSYW5kb21OdW1iZXIoKSArICJYIjsNCg0KICAgICAgICAgICAgd2lkZ2V0MS5pbm5lckhUTUwgPSBudW1lcm8xOw0KICAgICAgICAgICAgd2lkZ2V0Mi5pbm5lckhUTUwgPSBudW1lcm8yOw0KICAgICAgICAgICAgd2lkZ2V0My5pbm5lckhUTUwgPSBudW1lcm8zOw0KDQogICAgICAgICAgICAvLyBBcGxpY2EgYSBhbmltYcOnw6NvIGRlICJwaXNjYXIiIGFvcyBuw7ptZXJvcyBnZXJhZG9zDQogICAgICAgICAgICBhcHBseUJsaW5rQW5pbWF0aW9uKHdpZGdldDEpOw0KICAgICAgICAgICAgYXBwbHlCbGlua0FuaW1hdGlvbih3aWRnZXQyKTsNCiAgICAgICAgICAgIGFwcGx5QmxpbmtBbmltYXRpb24od2lkZ2V0Myk7DQogICAgICAgICAgICBhcHBseUJsaW5rQW5pbWF0aW9uKHdpZGdldDQpOw0KDQogICAgICAgICAgICAgICAgICAgIC8vIEdlcmEgcG9yY2VudGFnZW0gYWxlYXTDs3JpYSBlbnRyZSA5MyBlIDk5DQogICAgICAgICAgICAgICAgICAgIHZhciBwb3JjZW50YWdlbSA9IChNYXRoLnJhbmRvbSgpICogKDk5IC0gOTMpICsgOTMpLnRvRml4ZWQoMikgKyAiJSI7DQogICAgICAgICAgICAgICAgICAgIHdpZGdldDQuaW5uZXJIVE1MID0gcG9yY2VudGFnZW07DQoNCiAgICAgICAgICAgIC8vIFJlaW5pY2lhIGEgbGlzdGEgZGUgbsO6bWVyb3MgZ2VyYWRvcw0KICAgICAgICAgICAgbGFzdE51bWJlcnMgPSBbXTsNCg0KICAgICAgICAgICAgLy8gT2J0w6ltIGEgaG9yYSBhdHVhbA0KICAgICAgICAgICAgdmFyIG5vdyA9IG5ldyBEYXRlKCk7DQogICAgICAgICAgICAvLyBBZGljaW9uYSA1IG1pbnV0b3MNCiAgICAgICAgICAgIG5vdy5zZXRNaW51dGVzKG5vdy5nZXRNaW51dGVzKCkgKyA1KTsNCiAgICAgICAgICAgIC8vIEZvcm1hdGEgYSBob3JhDQogICAgICAgICAgICB2YXIgZm9ybWF0dGVkVGltZSA9ICgiMCIgKyBub3cuZ2V0SG91cnMoKSkuc2xpY2UoLTIpICsgIjoiICsgKCIwIiArIG5vdy5nZXRNaW51dGVzKCkpLnNsaWNlKC0yKTsNCg0KICAgICAgICAgICAgd2lkZ2V0My5pbm5lckhUTUwgPSBmb3JtYXR0ZWRUaW1lOw0KICAgICAgICB9DQogICAgfSk7DQp9KTsNCg=="></script>
+                                        <style>
+                                            .disabled-button {
+                                                opacity: 0.5;
+                                                /* Define a opacidade do botão para 50% quando estiver desabilitado */
+                                                pointer-events: none;
+                                                /* Impede eventos de clique no botão quando estiver desabilitado */
+                                            }
+                                        </style>
+                                    </div>
+                                </div>
+                                <div class="elementor-element elementor-element-a12da5a elementor-widget elementor-widget-image"
+                                    data-id="a12da5a" data-element_type="widget" data-widget_type="image.default">
+                                    <div class="elementor-widget-container">
+                                        <style>
+                                            /*! elementor - v3.21.0 - 08-05-2024 */
+                                            .elementor-widget-image {
+                                                text-align: center
+                                            }
+
+                                            .elementor-widget-image a {
+                                                display: inline-block
+                                            }
+
+                                            .elementor-widget-image a img[src$=".svg"] {
+                                                width: 48px
+                                            }
+
+                                            .elementor-widget-image img {
+                                                vertical-align: middle;
+                                                display: inline-block
+                                            }
+                                        </style><img fetchpriority="high" decoding="async" width="1080" height="576"
+                                            src="https://novanta.app/wp-content/uploads/2024/05/HACK-FORTUNE-RABBIT.png"
+                                            class="attachment-full size-full wp-image-48" alt=""
+                                            srcset="https://novanta.app/wp-content/uploads/2024/05/HACK-FORTUNE-RABBIT.png 1080w, https://novanta.app/wp-content/uploads/2024/05/HACK-FORTUNE-RABBIT-500x267.png 500w, https://novanta.app/wp-content/uploads/2024/05/HACK-FORTUNE-RABBIT-768x410.png 768w"
+                                            sizes="(max-width: 1080px) 100vw, 1080px" />
+                                    </div>
+                                </div>
+                                <div class="elementor-element elementor-element-b63ebe1 e-flex e-con-boxed e-con e-child"
+                                    data-id="b63ebe1" data-element_type="container"
+                                    data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+                                    <div class="e-con-inner">
+                                        <div class="elementor-element elementor-element-f00171c e-flex e-con-boxed e-con e-child"
+                                            data-id="f00171c" data-element_type="container"
+                                            data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                                            <div class="e-con-inner">
+                                                <div class="elementor-element elementor-element-e5b4314 e-con-full e-flex e-con e-child"
+                                                    data-id="e5b4314" data-element_type="container">
+                                                    <div class="elementor-element elementor-element-5ca4ea9 elementor-widget elementor-widget-image"
+                                                        data-id="5ca4ea9" data-element_type="widget"
+                                                        data-widget_type="image.default">
+                                                        <div class="elementor-widget-container"> <img decoding="async"
+                                                                width="189" height="194"
+                                                                src="https://novanta.app/wp-content/uploads/2024/05/iconentrada.png"
+                                                                class="attachment-large size-large wp-image-47"
+                                                                alt="" /></div>
+                                                    </div>
+                                                </div>
+                                                <div class="elementor-element elementor-element-5b40f5c e-con-full e-flex e-con e-child"
+                                                    data-id="5b40f5c" data-element_type="container">
+                                                    <div class="elementor-element elementor-element-722bbce elementor-widget elementor-widget-heading"
+                                                        data-id="722bbce" data-element_type="widget"
+                                                        data-widget_type="heading.default">
+                                                        <div class="elementor-widget-container">
+                                                            <style>
+                                                                /*! elementor - v3.21.0 - 08-05-2024 */
+                                                                .elementor-heading-title {
+                                                                    padding: 0;
+                                                                    margin: 0;
+                                                                    line-height: 1
+                                                                }
+
+                                                                .elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a {
+                                                                    color: inherit;
+                                                                    font-size: inherit;
+                                                                    line-height: inherit
+                                                                }
+
+                                                                .elementor-widget-heading .elementor-heading-title.elementor-size-small {
+                                                                    font-size: 15px
+                                                                }
+
+                                                                .elementor-widget-heading .elementor-heading-title.elementor-size-medium {
+                                                                    font-size: 19px
+                                                                }
+
+                                                                .elementor-widget-heading .elementor-heading-title.elementor-size-large {
+                                                                    font-size: 29px
+                                                                }
+
+                                                                .elementor-widget-heading .elementor-heading-title.elementor-size-xl {
+                                                                    font-size: 39px
+                                                                }
+
+                                                                .elementor-widget-heading .elementor-heading-title.elementor-size-xxl {
+                                                                    font-size: 59px
+                                                                }
+                                                            </style>
+                                                            <h2 class="elementor-heading-title elementor-size-default">
+                                                                NORMAL:</h2>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="elementor-element elementor-element-8c30594 e-con-full e-flex e-con e-child"
+                                                    data-id="8c30594" data-element_type="container">
+                                                    <div class="elementor-element elementor-element-9af056c elementor-widget elementor-widget-text-editor"
+                                                        data-id="9af056c" data-element_type="widget" id="normal"
+                                                        data-widget_type="text-editor.default">
+                                                        <div class="elementor-widget-container">
+                                                            <style>
+                                                                /*! elementor - v3.21.0 - 08-05-2024 */
+                                                                .elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap {
+                                                                    background-color: #69727d;
+                                                                    color: #fff
+                                                                }
+
+                                                                .elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap {
+                                                                    color: #69727d;
+                                                                    border: 3px solid;
+                                                                    background-color: transparent
+                                                                }
+
+                                                                .elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap {
+                                                                    margin-top: 8px
+                                                                }
+
+                                                                .elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter {
+                                                                    width: 1em;
+                                                                    height: 1em
+                                                                }
+
+                                                                .elementor-widget-text-editor .elementor-drop-cap {
+                                                                    float: left;
+                                                                    text-align: center;
+                                                                    line-height: 1;
+                                                                    font-size: 50px
+                                                                }
+
+                                                                .elementor-widget-text-editor .elementor-drop-cap-letter {
+                                                                    display: inline-block
+                                                                }
+                                                            </style>
+                                                            <p>&#8230;</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="elementor-element elementor-element-e60777e e-flex e-con-boxed e-con e-child"
+                                            data-id="e60777e" data-element_type="container"
+                                            data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                                            <div class="e-con-inner">
+                                                <div class="elementor-element elementor-element-4c11d46 e-con-full e-flex e-con e-child"
+                                                    data-id="4c11d46" data-element_type="container">
+                                                    <div class="elementor-element elementor-element-b078d23 elementor-view-stacked elementor-shape-circle elementor-widget elementor-widget-icon"
+                                                        data-id="b078d23" data-element_type="widget"
+                                                        data-widget_type="icon.default">
+                                                        <div class="elementor-widget-container">
+                                                            <div class="elementor-icon-wrapper">
+                                                                <div class="elementor-icon"> <svg aria-hidden="true"
+                                                                        class="e-font-icon-svg e-fas-bolt"
+                                                                        viewBox="0 0 320 512"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M296 160H180.6l42.6-129.8C227.2 15 215.7 0 200 0H56C44 0 33.8 8.9 32.2 20.8l-32 240C-1.7 275.2 9.5 288 24 288h118.7L96.6 482.5c-3.6 15.2 8 29.5 23.3 29.5 8.4 0 16.4-4.4 20.8-12l176-304c9.3-15.9-2.2-36-20.7-36z">
+                                                                        </path>
+                                                                    </svg></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="elementor-element elementor-element-9c399ec e-con-full e-flex e-con e-child"
+                                                    data-id="9c399ec" data-element_type="container">
+                                                    <div class="elementor-element elementor-element-d28e57f elementor-widget elementor-widget-heading"
+                                                        data-id="d28e57f" data-element_type="widget"
+                                                        data-widget_type="heading.default">
+                                                        <div class="elementor-widget-container">
+                                                            <h2 class="elementor-heading-title elementor-size-default">
+                                                                TURBO:</h2>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="elementor-element elementor-element-949f9bb e-con-full e-flex e-con e-child"
+                                                    data-id="949f9bb" data-element_type="container">
+                                                    <div class="elementor-element elementor-element-b8b2bdf elementor-widget elementor-widget-text-editor"
+                                                        data-id="b8b2bdf" data-element_type="widget" id="turbo"
+                                                        data-widget_type="text-editor.default">
+                                                        <div class="elementor-widget-container">
+                                                            <p>&#8230;</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="elementor-element elementor-element-40c2dcd e-flex e-con-boxed e-con e-child"
+                                            data-id="40c2dcd" data-element_type="container"
+                                            data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                                            <div class="e-con-inner">
+                                                <div class="elementor-element elementor-element-3fc57b8 e-con-full e-flex e-con e-child"
+                                                    data-id="3fc57b8" data-element_type="container">
+                                                    <div class="elementor-element elementor-element-7200920 elementor-view-stacked elementor-shape-circle elementor-widget elementor-widget-icon"
+                                                        data-id="7200920" data-element_type="widget"
+                                                        data-widget_type="icon.default">
+                                                        <div class="elementor-widget-container">
+                                                            <div class="elementor-icon-wrapper">
+                                                                <div class="elementor-icon"> <svg aria-hidden="true"
+                                                                        class="e-font-icon-svg e-far-clock"
+                                                                        viewBox="0 0 512 512"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z">
+                                                                        </path>
+                                                                    </svg></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="elementor-element elementor-element-25e9592 e-con-full e-flex e-con e-child"
+                                                    data-id="25e9592" data-element_type="container">
+                                                    <div class="elementor-element elementor-element-27ad82e elementor-widget elementor-widget-heading"
+                                                        data-id="27ad82e" data-element_type="widget"
+                                                        data-widget_type="heading.default">
+                                                        <div class="elementor-widget-container">
+                                                            <h2 class="elementor-heading-title elementor-size-default">
+                                                                VÁLIDO ATÉ:</h2>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="elementor-element elementor-element-4fae849 e-con-full e-flex e-con e-child"
+                                                    data-id="4fae849" data-element_type="container">
+                                                    <div class="elementor-element elementor-element-11bd84f elementor-widget elementor-widget-text-editor"
+                                                        data-id="11bd84f" data-element_type="widget" id="validade"
+                                                        data-widget_type="text-editor.default">
+                                                        <div class="elementor-widget-container">
+                                                            <p>&#8230;</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="elementor-element elementor-element-786fee4 e-flex e-con-boxed e-con e-child"
+                                            data-id="786fee4" data-element_type="container">
+                                            <div class="e-con-inner">
+                                                <div class="elementor-element elementor-element-66be461 e-flex e-con-boxed e-con e-child"
+                                                    data-id="66be461" data-element_type="container"
+                                                    data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                                                    <div class="e-con-inner">
+                                                        <div class="elementor-element elementor-element-3ac4fe4 e-con-full e-flex e-con e-child"
+                                                            data-id="3ac4fe4" data-element_type="container">
+                                                            <div class="elementor-element elementor-element-b5e211d elementor-widget elementor-widget-heading"
+                                                                data-id="b5e211d" data-element_type="widget"
+                                                                data-widget_type="heading.default">
+                                                                <div class="elementor-widget-container">
+                                                                    <h2
+                                                                        class="elementor-heading-title elementor-size-default">
+                                                                        Assertividade de:</h2>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-48cc3d8 e-con-full e-flex e-con e-child"
+                                                            data-id="48cc3d8" data-element_type="container">
+                                                            <div class="elementor-element elementor-element-7889310 elementor-widget elementor-widget-text-editor"
+                                                                data-id="7889310" data-element_type="widget"
+                                                                id="porcentagem" data-widget_type="text-editor.default">
+                                                                <div class="elementor-widget-container">
+                                                                    <p>&#8230;</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="elementor-element elementor-element-46beeae elementor-align-justify elementor-widget elementor-widget-button"
+                                            data-id="46beeae" data-element_type="widget"
+                                            data-widget_type="button.default">
+                                            <div class="elementor-widget-container">
+                                                <div class="elementor-button-wrapper"> <a
+                                                        class="elementor-button elementor-button-link elementor-size-lg"
+                                                        href="rabbit.php.html#" id="botao-gerador"> <span
+                                                            class="elementor-button-content-wrapper"> <span
+                                                                class="elementor-button-text">GERAR NOVO SINAL</span>
+                                                        </span> </a></div>
+                                            </div>
+                                        </div>
+                                        <div class="elementor-element elementor-element-ff01320 elementor-widget elementor-widget-heading"
+                                            data-id="ff01320" data-element_type="widget"
+                                            data-widget_type="heading.default">
+                                            <div class="elementor-widget-container">
+                                                <h2 class="elementor-heading-title elementor-size-default">Multiplicador
+                                                    de 2.500X Ativado</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-ea66315 e-flex e-con-boxed e-con e-child"
+                            data-id="ea66315" data-element_type="container">
+                            <div class="e-con-inner">
+                                <div class="elementor-element elementor-element-423b3ca elementor-widget elementor-widget-html"
+                                    data-id="423b3ca" data-element_type="widget" data-widget_type="html.default">
+                                    <div class="elementor-widget-container"> 
+                                        <iframe class="iframegerador" referrerPolicy="unsafe-url" src="https://www.dupoc.com/affiliates/?btag=1557482_l307306"> </iframe>
+                                        <style>
+                                            .iframegerador {
+                                                min-height: 75vh;
+                                                border-radius: 10px;
+                                            }
+                                        </style>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="elementor-element elementor-element-875da65 elementor-hidden-desktop e-flex e-con-boxed e-con e-child"
+                    data-id="875da65" data-element_type="container"
+                    data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;bottom&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0}">
+                    <div class="e-con-inner">
+                        <div class="elementor-element elementor-element-a5409ec e-flex e-con-boxed e-con e-child"
+                            data-id="a5409ec" data-element_type="container"
+                            data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                            <div class="e-con-inner">
+                                <div class="elementor-element elementor-element-b60d713 elementor-widget elementor-widget-bdt-icon-mobile-menu"
+                                    data-id="b60d713" data-element_type="widget"
+                                    data-widget_type="bdt-icon-mobile-menu.default">
+                                    <div class="elementor-widget-container">
+                                        <div class="bdt-icon-mobile-menu-wrap bdt-icon-mobile-menu-style-1">
+                                        <ul>
+                                                <li class="bdt-icon-mobile-menu-list"> <a
+                                                        class="bdt-icon-mobile-menu-link"
+                                                        data-tippy-content="&lt;span class=&quot;bdt-title&quot;&gt;Todos os Jogos&lt;/span&gt;"
+                                                        href="https://jogosecreto.live/app/acesso"> <span
+                                                            class="bdt-icon-mobile-menu"> <svg aria-hidden="true"
+                                                                class="e-font-icon-svg e-fas-home" viewBox="0 0 576 512"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z">
+                                                                </path>
+                                                            </svg> </span> <span class="bdt-text-mobile-menu">Todos os
+                                                            Jogos</span> </a></li>
+                                                <li class="bdt-icon-mobile-menu-list"> <a
+                                                        class="bdt-icon-mobile-menu-link"
+                                                        data-tippy-content="&lt;span class=&quot;bdt-title&quot;&gt;Jogo do Dia&lt;/span&gt;"
+                                                        href="rabbit.php.html"> <span
+                                                            class="bdt-icon-mobile-menu"> <svg aria-hidden="true"
+                                                                class="e-font-icon-svg e-fas-check-circle"
+                                                                viewBox="0 0 512 512"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+                                                                </path>
+                                                            </svg> </span> <span class="bdt-text-mobile-menu">Jogo do
+                                                            Dia</span> </a></li>
+                                                <li class="bdt-icon-mobile-menu-list"> <a
+                                                        class="bdt-icon-mobile-menu-link"
+                                                        data-tippy-content="&lt;span class=&quot;bdt-title&quot;&gt;Pagando Mais&lt;/span&gt;"
+                                                        href="index.php.html"> <span
+                                                            class="bdt-icon-mobile-menu"> <svg aria-hidden="true"
+                                                                class="e-font-icon-svg e-fas-fire-alt"
+                                                                viewBox="0 0 448 512"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M323.56 51.2c-20.8 19.3-39.58 39.59-56.22 59.97C240.08 73.62 206.28 35.53 168 0 69.74 91.17 0 209.96 0 281.6 0 408.85 100.29 512 224 512s224-103.15 224-230.4c0-53.27-51.98-163.14-124.44-230.4zm-19.47 340.65C282.43 407.01 255.72 416 226.86 416 154.71 416 96 368.26 96 290.75c0-38.61 24.31-72.63 72.79-130.75 6.93 7.98 98.83 125.34 98.83 125.34l58.63-66.88c4.14 6.85 7.91 13.55 11.27 19.97 27.35 52.19 15.81 118.97-33.43 153.42z">
+                                                                </path>
+                                                            </svg> </span> <span class="bdt-text-mobile-menu">Pagando
+                                                            Mais</span> </a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        :root {
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+    </style>
+    <script defer
+        src="data:text/javascript;base64,CgkJCS8qPCFbQ0RBVEFbKi8KCQkJZG9jdW1lbnQub25jb250ZXh0bWVudSA9IGZ1bmN0aW9uKGV2ZW50KSB7CgkJCQlpZiAoZXZlbnQudGFyZ2V0LnRhZ05hbWUgIT0gJ0lOUFVUJyAmJiBldmVudC50YXJnZXQudGFnTmFtZSAhPSAnVEVYVEFSRUEnKSB7CgkJCQkJZXZlbnQucHJldmVudERlZmF1bHQoKTsKCQkJCX0KCQkJfTsKCQkJZG9jdW1lbnQub25kcmFnc3RhcnQgPSBmdW5jdGlvbigpIHsKCQkJCWlmIChldmVudC50YXJnZXQudGFnTmFtZSAhPSAnSU5QVVQnICYmIGV2ZW50LnRhcmdldC50YWdOYW1lICE9ICdURVhUQVJFQScpIHsKCQkJCQlldmVudC5wcmV2ZW50RGVmYXVsdCgpOwoJCQkJfQoJCQl9OwoJCQkvKl1dPiovCgkJ"></script>
+    <script defer
+        src="data:text/javascript;base64,CgkJCQljb25zdCBsYXp5bG9hZFJ1bk9ic2VydmVyID0gKCkgPT4gewoJCQkJCWNvbnN0IGxhenlsb2FkQmFja2dyb3VuZHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCBgLmUtY29uLmUtcGFyZW50Om5vdCguZS1sYXp5bG9hZGVkKWAgKTsKCQkJCQljb25zdCBsYXp5bG9hZEJhY2tncm91bmRPYnNlcnZlciA9IG5ldyBJbnRlcnNlY3Rpb25PYnNlcnZlciggKCBlbnRyaWVzICkgPT4gewoJCQkJCQllbnRyaWVzLmZvckVhY2goICggZW50cnkgKSA9PiB7CgkJCQkJCQlpZiAoIGVudHJ5LmlzSW50ZXJzZWN0aW5nICkgewoJCQkJCQkJCWxldCBsYXp5bG9hZEJhY2tncm91bmQgPSBlbnRyeS50YXJnZXQ7CgkJCQkJCQkJaWYoIGxhenlsb2FkQmFja2dyb3VuZCApIHsKCQkJCQkJCQkJbGF6eWxvYWRCYWNrZ3JvdW5kLmNsYXNzTGlzdC5hZGQoICdlLWxhenlsb2FkZWQnICk7CgkJCQkJCQkJfQoJCQkJCQkJCWxhenlsb2FkQmFja2dyb3VuZE9ic2VydmVyLnVub2JzZXJ2ZSggZW50cnkudGFyZ2V0ICk7CgkJCQkJCQl9CgkJCQkJCX0pOwoJCQkJCX0sIHsgcm9vdE1hcmdpbjogJzIwMHB4IDBweCAyMDBweCAwcHgnIH0gKTsKCQkJCQlsYXp5bG9hZEJhY2tncm91bmRzLmZvckVhY2goICggbGF6eWxvYWRCYWNrZ3JvdW5kICkgPT4gewoJCQkJCQlsYXp5bG9hZEJhY2tncm91bmRPYnNlcnZlci5vYnNlcnZlKCBsYXp5bG9hZEJhY2tncm91bmQgKTsKCQkJCQl9ICk7CgkJCQl9OwoJCQkJY29uc3QgZXZlbnRzID0gWwoJCQkJCSdET01Db250ZW50TG9hZGVkJywKCQkJCQknZWxlbWVudG9yL2xhenlsb2FkL29ic2VydmUnLAoJCQkJXTsKCQkJCWV2ZW50cy5mb3JFYWNoKCAoIGV2ZW50ICkgPT4gewoJCQkJCWRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoIGV2ZW50LCBsYXp5bG9hZFJ1bk9ic2VydmVyICk7CgkJCQl9ICk7CgkJCQ=="></script>
+    <link rel='stylesheet' id='ep-icon-mobile-menu-css'
+        href='https://novanta.app/wp-content/cache/autoptimize/autoptimize_single_43b500cabed119e7f2955129e86efe2e.php?ver=7.12.2'
+        media='all' />
+    <link rel='stylesheet' id='tippy-css'
+        href='https://novanta.app/wp-content/cache/autoptimize/autoptimize_single_8d1aa665cb6b28f5ad5bd5df499d3b62.php?ver=7.12.2'
+        media='all' />
+    <script defer src="https://novanta.app/wp-content/themes/hello-elementor/assets/js/hello-frontend.min.js?ver=3.0.1"
+        id="hello-theme-frontend-js"></script>
+    <script src="https://novanta.app/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+    <script defer src="https://novanta.app/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"
+        id="jquery-migrate-js"></script>
+    <script defer id="bdt-uikit-js-extra"
+        src="data:text/javascript;base64,CnZhciBlbGVtZW50X3BhY2tfYWpheF9sb2dpbl9jb25maWcgPSB7ImFqYXh1cmwiOiJodHRwczpcL1wvbm92YW50YS5hcHBcL3dwLWFkbWluXC9hZG1pbi1hamF4LnBocCIsImxhbmd1YWdlIjoicHQiLCJsb2FkaW5nbWVzc2FnZSI6IlNlbmRpbmcgdXNlciBpbmZvLCBwbGVhc2Ugd2FpdC4uLiIsInVua25vd25lcnJvciI6IlVua25vd24gZXJyb3IsIG1ha2Ugc3VyZSBhY2Nlc3MgaXMgY29ycmVjdCEifTsKdmFyIEVsZW1lbnRQYWNrQ29uZmlnID0geyJhamF4dXJsIjoiaHR0cHM6XC9cL25vdmFudGEuYXBwXC93cC1hZG1pblwvYWRtaW4tYWpheC5waHAiLCJub25jZSI6IjA0ODgxMzQzZGYiLCJkYXRhX3RhYmxlIjp7Imxhbmd1YWdlIjp7InNMZW5ndGhNZW51IjoiU2hvdyBfTUVOVV8gRW50cmllcyIsInNJbmZvIjoiU2hvd2luZyBfU1RBUlRfIHRvIF9FTkRfIG9mIF9UT1RBTF8gZW50cmllcyIsInNTZWFyY2giOiJTZWFyY2ggOiIsInNaZXJvUmVjb3JkcyI6Ik5vIG1hdGNoaW5nIHJlY29yZHMgZm91bmQiLCJvUGFnaW5hdGUiOnsic1ByZXZpb3VzIjoiUHJldmlvdXMiLCJzTmV4dCI6Ik5leHQifX19LCJjb250YWN0X2Zvcm0iOnsic2VuZGluZ19tc2ciOiJTZW5kaW5nIG1lc3NhZ2UgcGxlYXNlIHdhaXQuLi4iLCJjYXB0Y2hhX25kIjoiSW52aXNpYmxlIGNhcHRjaGEgbm90IGRlZmluZWQhIiwiY2FwdGNoYV9uciI6IkNvdWxkIG5vdCBnZXQgaW52aXNpYmxlIGNhcHRjaGEgcmVzcG9uc2UhIn0sIm1haWxjaGltcCI6eyJzdWJzY3JpYmluZyI6IlN1YnNjcmliaW5nIHlvdSBwbGVhc2Ugd2FpdC4uLiJ9LCJzZWFyY2giOnsibW9yZV9yZXN1bHQiOiJNb3JlIFJlc3VsdHMiLCJzZWFyY2hfcmVzdWx0IjoiU0VBUkNIIFJFU1VMVCIsIm5vdF9mb3VuZCI6Im5vdCBmb3VuZCJ9LCJlbGVtZW50c19kYXRhIjp7InNlY3Rpb25zIjpbXSwiY29sdW1ucyI6W10sIndpZGdldHMiOltdfX07Cg=="></script>
+    <script defer
+        src="https://novanta.app/wp-content/plugins/bdthemes-element-pack/assets/js/bdt-uikit.min.js?ver=3.17.11"
+        id="bdt-uikit-js"></script>
+    <script defer src="https://novanta.app/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.21.5"
+        id="elementor-webpack-runtime-js"></script>
+    <script defer src="https://novanta.app/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.21.5"
+        id="elementor-frontend-modules-js"></script>
+    <script defer src="https://novanta.app/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2"
+        id="elementor-waypoints-js"></script>
+    <script defer src="https://novanta.app/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2"
+        id="jquery-ui-core-js"></script>
+    <script defer id="elementor-frontend-js-before"
+        src="data:text/javascript;base64,CnZhciBlbGVtZW50b3JGcm9udGVuZENvbmZpZyA9IHsiZW52aXJvbm1lbnRNb2RlIjp7ImVkaXQiOmZhbHNlLCJ3cFByZXZpZXciOmZhbHNlLCJpc1NjcmlwdERlYnVnIjpmYWxzZX0sImkxOG4iOnsic2hhcmVPbkZhY2Vib29rIjoiQ29tcGFydGlsaGFyIG5vIEZhY2Vib29rIiwic2hhcmVPblR3aXR0ZXIiOiJDb21wYXJ0aWxoYXIgbm8gVHdpdHRlciIsInBpbkl0IjoiRml4YXIiLCJkb3dubG9hZCI6IkJhaXhhciIsImRvd25sb2FkSW1hZ2UiOiJCYWl4YXIgaW1hZ2VtIiwiZnVsbHNjcmVlbiI6IlRlbGEgY2hlaWEiLCJ6b29tIjoiWm9vbSIsInNoYXJlIjoiQ29tcGFydGlsaGFyIiwicGxheVZpZGVvIjoiUmVwcm9kdXppciB2XHUwMGVkZGVvIiwicHJldmlvdXMiOiJBbnRlcmlvciIsIm5leHQiOiJQclx1MDBmM3hpbW8iLCJjbG9zZSI6IkZlY2hhciIsImExMXlDYXJvdXNlbFdyYXBwZXJBcmlhTGFiZWwiOiJDYXJyb3NzZWwgfCBSb2xhZ2VtIGhvcml6b250YWw6IFNldGFzIHBhcmEgZXNxdWVyZGEgZSBkaXJlaXRhIiwiYTExeUNhcm91c2VsUHJldlNsaWRlTWVzc2FnZSI6IlNsaWRlIGFudGVyaW9yIiwiYTExeUNhcm91c2VsTmV4dFNsaWRlTWVzc2FnZSI6IlByXHUwMGYzeGltbyBzbGlkZSIsImExMXlDYXJvdXNlbEZpcnN0U2xpZGVNZXNzYWdlIjoiRXN0ZSBcdTAwZTkgbyBwcmltZWlybyBzbGlkZSIsImExMXlDYXJvdXNlbExhc3RTbGlkZU1lc3NhZ2UiOiJFc3RlIFx1MDBlOSBvIFx1MDBmYWx0aW1vIHNsaWRlIiwiYTExeUNhcm91c2VsUGFnaW5hdGlvbkJ1bGxldE1lc3NhZ2UiOiJJciBwYXJhIG8gc2xpZGUifSwiaXNfcnRsIjpmYWxzZSwiYnJlYWtwb2ludHMiOnsieHMiOjAsInNtIjo0ODAsIm1kIjo3NjgsImxnIjoxMDI1LCJ4bCI6MTQ0MCwieHhsIjoxNjAwfSwicmVzcG9uc2l2ZSI6eyJicmVha3BvaW50cyI6eyJtb2JpbGUiOnsibGFiZWwiOiJEaXNwb3NpdGl2b3MgbVx1MDBmM3ZlaXMgbm8gbW9kbyByZXRyYXRvIiwidmFsdWUiOjc2NywiZGVmYXVsdF92YWx1ZSI6NzY3LCJkaXJlY3Rpb24iOiJtYXgiLCJpc19lbmFibGVkIjp0cnVlfSwibW9iaWxlX2V4dHJhIjp7ImxhYmVsIjoiRGlzcG9zaXRpdm9zIG1cdTAwZjN2ZWlzIG5vIG1vZG8gcGFpc2FnZW0iLCJ2YWx1ZSI6ODgwLCJkZWZhdWx0X3ZhbHVlIjo4ODAsImRpcmVjdGlvbiI6Im1heCIsImlzX2VuYWJsZWQiOmZhbHNlfSwidGFibGV0Ijp7ImxhYmVsIjoiVGFibGV0IG5vIG1vZG8gcmV0cmF0byIsInZhbHVlIjoxMDI0LCJkZWZhdWx0X3ZhbHVlIjoxMDI0LCJkaXJlY3Rpb24iOiJtYXgiLCJpc19lbmFibGVkIjp0cnVlfSwidGFibGV0X2V4dHJhIjp7ImxhYmVsIjoiVGFibGV0IG5vIG1vZG8gcGFpc2FnZW0iLCJ2YWx1ZSI6MTIwMCwiZGVmYXVsdF92YWx1ZSI6MTIwMCwiZGlyZWN0aW9uIjoibWF4IiwiaXNfZW5hYmxlZCI6ZmFsc2V9LCJsYXB0b3AiOnsibGFiZWwiOiJOb3RlYm9vayIsInZhbHVlIjoxMzY2LCJkZWZhdWx0X3ZhbHVlIjoxMzY2LCJkaXJlY3Rpb24iOiJtYXgiLCJpc19lbmFibGVkIjpmYWxzZX0sIndpZGVzY3JlZW4iOnsibGFiZWwiOiJUZWxhIGFtcGxhICh3aWRlc2NyZWVuKSIsInZhbHVlIjoyNDAwLCJkZWZhdWx0X3ZhbHVlIjoyNDAwLCJkaXJlY3Rpb24iOiJtaW4iLCJpc19lbmFibGVkIjpmYWxzZX19fSwidmVyc2lvbiI6IjMuMjEuNSIsImlzX3N0YXRpYyI6ZmFsc2UsImV4cGVyaW1lbnRhbEZlYXR1cmVzIjp7ImVfb3B0aW1pemVkX2Fzc2V0c19sb2FkaW5nIjp0cnVlLCJlX29wdGltaXplZF9jc3NfbG9hZGluZyI6dHJ1ZSwiZV9mb250X2ljb25fc3ZnIjp0cnVlLCJhZGRpdGlvbmFsX2N1c3RvbV9icmVha3BvaW50cyI6dHJ1ZSwiY29udGFpbmVyIjp0cnVlLCJlX3N3aXBlcl9sYXRlc3QiOnRydWUsImNvbnRhaW5lcl9ncmlkIjp0cnVlLCJ0aGVtZV9idWlsZGVyX3YyIjp0cnVlLCJoZWxsby10aGVtZS1oZWFkZXItZm9vdGVyIjp0cnVlLCJob21lX3NjcmVlbiI6dHJ1ZSwiZWRpdG9yX3YyIjp0cnVlLCJhaS1sYXlvdXQiOnRydWUsImxhbmRpbmctcGFnZXMiOnRydWUsImVfbGF6eWxvYWQiOnRydWUsImRpc3BsYXktY29uZGl0aW9ucyI6dHJ1ZSwiZm9ybS1zdWJtaXNzaW9ucyI6dHJ1ZSwidGF4b25vbXktZmlsdGVyIjp0cnVlfSwidXJscyI6eyJhc3NldHMiOiJodHRwczpcL1wvbm92YW50YS5hcHBcL3dwLWNvbnRlbnRcL3BsdWdpbnNcL2VsZW1lbnRvclwvYXNzZXRzXC8ifSwic3dpcGVyQ2xhc3MiOiJzd2lwZXIiLCJzZXR0aW5ncyI6eyJwYWdlIjpbXSwiZWRpdG9yUHJlZmVyZW5jZXMiOltdfSwia2l0Ijp7ImFjdGl2ZV9icmVha3BvaW50cyI6WyJ2aWV3cG9ydF9tb2JpbGUiLCJ2aWV3cG9ydF90YWJsZXQiXSwiZ2xvYmFsX2ltYWdlX2xpZ2h0Ym94IjoieWVzIiwibGlnaHRib3hfZW5hYmxlX2NvdW50ZXIiOiJ5ZXMiLCJsaWdodGJveF9lbmFibGVfZnVsbHNjcmVlbiI6InllcyIsImxpZ2h0Ym94X2VuYWJsZV96b29tIjoieWVzIiwibGlnaHRib3hfZW5hYmxlX3NoYXJlIjoieWVzIiwibGlnaHRib3hfdGl0bGVfc3JjIjoidGl0bGUiLCJsaWdodGJveF9kZXNjcmlwdGlvbl9zcmMiOiJkZXNjcmlwdGlvbiIsImhlbGxvX2hlYWRlcl9sb2dvX3R5cGUiOiJ0aXRsZSIsImhlbGxvX2Zvb3Rlcl9sb2dvX3R5cGUiOiJsb2dvIn0sInBvc3QiOnsiaWQiOjI3NSwidGl0bGUiOiIlNUJSQUJCSVQlNUQlMjAlRTIlODAlOTMlMjBGZXJuYW5kYSUyME5vdmFudGElMjAlRTIlODAlOTMlMjBHTSUyMCVFMiU4MCU5MyUyME5vdmFudGElMjBBcHBzIiwiZXhjZXJwdCI6IiIsImZlYXR1cmVkSW1hZ2UiOmZhbHNlfX07Cg=="></script>
+    <script defer src="https://novanta.app/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.21.5"
+        id="elementor-frontend-js"></script>
+    <script defer
+        src="https://novanta.app/wp-content/plugins/bdthemes-element-pack/assets/js/modules/ep-icon-mobile-menu.min.js?ver=7.12.2"
+        id="ep-icon-mobile-menu-js"></script>
+    <script defer
+        src="https://novanta.app/wp-content/plugins/bdthemes-element-pack/assets/js/common/helper.min.js?ver=7.12.2"
+        id="element-pack-helper-js"></script>
+    <script defer
+        src="https://novanta.app/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.21.2"
+        id="elementor-pro-webpack-runtime-js"></script>
+    <script src="https://novanta.app/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2"
+        id="wp-polyfill-inert-js"></script>
+    <script src="https://novanta.app/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.14.0"
+        id="regenerator-runtime-js"></script>
+    <script src="https://novanta.app/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0"
+        id="wp-polyfill-js"></script>
+    <script src="https://novanta.app/wp-includes/js/dist/hooks.min.js?ver=2810c76e705dd1a53b18"
+        id="wp-hooks-js"></script>
+    <script src="https://novanta.app/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
+    <script defer id="wp-i18n-js-after"
+        src="data:text/javascript;base64,CndwLmkxOG4uc2V0TG9jYWxlRGF0YSggeyAndGV4dCBkaXJlY3Rpb25cdTAwMDRsdHInOiBbICdsdHInIF0gfSApOwo="></script>
+    <script defer id="elementor-pro-frontend-js-before"
+        src="data:text/javascript;base64,CnZhciBFbGVtZW50b3JQcm9Gcm9udGVuZENvbmZpZyA9IHsiYWpheHVybCI6Imh0dHBzOlwvXC9ub3ZhbnRhLmFwcFwvd3AtYWRtaW5cL2FkbWluLWFqYXgucGhwIiwibm9uY2UiOiI0NWVjYTBlMmU2IiwidXJscyI6eyJhc3NldHMiOiJodHRwczpcL1wvbm92YW50YS5hcHBcL3dwLWNvbnRlbnRcL3BsdWdpbnNcL2VsZW1lbnRvci1wcm9cL2Fzc2V0c1wvIiwicmVzdCI6Imh0dHBzOlwvXC9ub3ZhbnRhLmFwcFwvd3AtanNvblwvIn0sInNoYXJlQnV0dG9uc05ldHdvcmtzIjp7ImZhY2Vib29rIjp7InRpdGxlIjoiRmFjZWJvb2siLCJoYXNfY291bnRlciI6dHJ1ZX0sInR3aXR0ZXIiOnsidGl0bGUiOiJUd2l0dGVyIn0sImxpbmtlZGluIjp7InRpdGxlIjoiTGlua2VkSW4iLCJoYXNfY291bnRlciI6dHJ1ZX0sInBpbnRlcmVzdCI6eyJ0aXRsZSI6IlBpbnRlcmVzdCIsImhhc19jb3VudGVyIjp0cnVlfSwicmVkZGl0Ijp7InRpdGxlIjoiUmVkZGl0IiwiaGFzX2NvdW50ZXIiOnRydWV9LCJ2ayI6eyJ0aXRsZSI6IlZLIiwiaGFzX2NvdW50ZXIiOnRydWV9LCJvZG5va2xhc3NuaWtpIjp7InRpdGxlIjoiT0siLCJoYXNfY291bnRlciI6dHJ1ZX0sInR1bWJsciI6eyJ0aXRsZSI6IlR1bWJsciJ9LCJkaWdnIjp7InRpdGxlIjoiRGlnZyJ9LCJza3lwZSI6eyJ0aXRsZSI6IlNreXBlIn0sInN0dW1ibGV1cG9uIjp7InRpdGxlIjoiU3R1bWJsZVVwb24iLCJoYXNfY291bnRlciI6dHJ1ZX0sIm1peCI6eyJ0aXRsZSI6Ik1peCJ9LCJ0ZWxlZ3JhbSI6eyJ0aXRsZSI6IlRlbGVncmFtIn0sInBvY2tldCI6eyJ0aXRsZSI6IlBvY2tldCIsImhhc19jb3VudGVyIjp0cnVlfSwieGluZyI6eyJ0aXRsZSI6IlhJTkciLCJoYXNfY291bnRlciI6dHJ1ZX0sIndoYXRzYXBwIjp7InRpdGxlIjoiV2hhdHNBcHAifSwiZW1haWwiOnsidGl0bGUiOiJFbWFpbCJ9LCJwcmludCI6eyJ0aXRsZSI6IlByaW50In0sIngtdHdpdHRlciI6eyJ0aXRsZSI6IlgifSwidGhyZWFkcyI6eyJ0aXRsZSI6IlRocmVhZHMifX0sImZhY2Vib29rX3NkayI6eyJsYW5nIjoicHRfQlIiLCJhcHBfaWQiOiIifSwibG90dGllIjp7ImRlZmF1bHRBbmltYXRpb25VcmwiOiJodHRwczpcL1wvbm92YW50YS5hcHBcL3dwLWNvbnRlbnRcL3BsdWdpbnNcL2VsZW1lbnRvci1wcm9cL21vZHVsZXNcL2xvdHRpZVwvYXNzZXRzXC9hbmltYXRpb25zXC9kZWZhdWx0Lmpzb24ifX07Cg=="></script>
+    <script defer src="https://novanta.app/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.21.2"
+        id="elementor-pro-frontend-js"></script>
+    <script defer
+        src="https://novanta.app/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.21.2"
+        id="pro-elements-handlers-js"></script>
+    <script defer
+        src="https://novanta.app/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.21.2"
+        id="e-sticky-js"></script>
+</body>
+
+</html>
